@@ -70,13 +70,17 @@ const Contact = () => {
 
             <div className="flex gap-4">
               <a 
-                href="#"
+                href="https://github.com/UdhayaSaravan"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-card border border-primary/20 rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Github className="w-6 h-6" />
               </a>
               <a 
-                href="#"
+                href="https://www.linkedin.com/in/udhaya-saravanan"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-card border border-primary/20 rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Linkedin className="w-6 h-6" />

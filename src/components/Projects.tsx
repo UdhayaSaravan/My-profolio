@@ -101,15 +101,33 @@ const Projects = () => {
                   
                   <div className="flex gap-3 pt-2">
                     <Button 
-                      size="sm" 
+                      size="sm"
+                      asChild
                       className="bg-gradient-to-r from-primary to-tech-blue text-primary-foreground hover:opacity-90"
                     >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View Project
+                      <a 
+                        href="https://github.com/UdhayaSaravan" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        View Project
+                      </a>
                     </Button>
-                    <Button size="sm" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      asChild
+                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    >
+                      <a 
+                        href="https://github.com/UdhayaSaravan" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </a>
                     </Button>
                   </div>
                 </CardContent>

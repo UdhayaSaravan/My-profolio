@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-primary">Udhaya Kumar</h3>
+            <h3 className="text-xl font-bold text-primary">Udhaya Saravanan.G</h3>
             <p className="text-muted-foreground">
               Front-End Developer & Data Analyst passionate about creating 
               impactful digital solutions.
@@ -19,13 +19,17 @@ const Footer = () => {
                 <Mail className="w-5 h-5" />
               </a>
               <a 
-                href="#"
+                href="https://github.com/UdhayaSaravan"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-card border border-primary/20 rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a 
-                href="#"
+                href="https://www.linkedin.com/in/udhaya-saravanan"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-card border border-primary/20 rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
@@ -64,7 +68,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2024 Udhaya Kumar. All rights reserved.
+              © 2024 Udhaya Saravanan.G. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground flex items-center gap-1">
               Made with <Heart className="w-4 h-4 text-red-500" /> using React & TypeScript

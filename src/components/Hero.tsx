@@ -28,7 +28,7 @@ const Hero = () => {
               <h1 className="text-5xl lg:text-7xl font-bold">
                 <span className="text-foreground">Hi, I'm </span>
                 <span className="bg-gradient-to-r from-primary to-tech-blue bg-clip-text text-transparent">
-                  Udhaya Kumar
+                  Udhaya Saravanan.G
                 </span>
               </h1>
               <p className="text-xl lg:text-2xl text-muted-foreground">
@@ -79,13 +79,17 @@ const Hero = () => {
                 <Mail className="w-5 h-5" />
               </a>
               <a 
-                href="#"
+                href="https://github.com/UdhayaSaravan"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-card/50 backdrop-blur-sm rounded-full border hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a 
-                href="#"
+                href="https://www.linkedin.com/in/udhaya-saravanan"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-card/50 backdrop-blur-sm rounded-full border hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
@@ -100,10 +104,10 @@ const Hero = () => {
                 <div className="relative bg-card border-2 border-primary/20 rounded-3xl p-8 backdrop-blur-sm">
                   <div className="text-center space-y-4">
                     <div className="w-24 h-24 bg-gradient-to-r from-primary to-tech-blue rounded-full mx-auto flex items-center justify-center text-2xl font-bold text-primary-foreground">
-                      UK
+                      US
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold">Udhaya Kumar</h3>
+                      <h3 className="text-xl font-semibold">Udhaya Saravanan.G</h3>
                       <p className="text-muted-foreground">B.Tech IT Student</p>
                       <p className="text-sm text-muted-foreground">Chennai, Tamil Nadu</p>
                     </div>
