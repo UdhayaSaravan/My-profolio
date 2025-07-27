@@ -18,15 +18,6 @@ const Projects = () => {
       gradient: "from-primary to-tech-blue"
     },
     {
-      title: "Amazon Sales Dashboard", 
-      description: "Comprehensive dashboard providing insights and trends on e-commerce sales data with advanced analytics and reporting features.",
-      image: dashboardImage,
-      icon: BarChart3,
-      technologies: ["Power BI", "Data Analysis", "E-commerce Analytics"],
-      type: "Data Analytics",
-      gradient: "from-tech-blue to-tech-purple"
-    },
-    {
       title: "Task Management Website",
       description: "A modern front-end interface for task tracking and productivity with intuitive user experience and responsive design.",
       image: taskManagementImage,
