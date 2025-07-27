@@ -2,12 +2,54 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/components/ui/use-toast';
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
+    setIsLoading(true);
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    const templateParams = {
+      from_name: formData.get('name'),
+      from_email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+      to_email: 'udhaya.intern@gmail.com'
+    };
+
+    try {
+      // You'll need to set up EmailJS account and replace these with your IDs
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        templateParams,
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -101,7 +143,9 @@ const Contact = () => {
                     </label>
                     <Input 
                       id="name" 
+                      name="name"
                       placeholder="Your name" 
+                      required
                       className="bg-background/50 border-primary/20 focus:border-primary"
                     />
                   </div>
@@ -111,8 +155,10 @@ const Contact = () => {
                     </label>
                     <Input 
                       id="email" 
+                      name="email"
                       type="email" 
                       placeholder="your.email@example.com" 
+                      required
                       className="bg-background/50 border-primary/20 focus:border-primary"
                     />
                   </div>
@@ -124,7 +170,9 @@ const Contact = () => {
                   </label>
                   <Input 
                     id="subject" 
+                    name="subject"
                     placeholder="What's this about?" 
+                    required
                     className="bg-background/50 border-primary/20 focus:border-primary"
                   />
                 </div>
@@ -135,18 +183,21 @@ const Contact = () => {
                   </label>
                   <Textarea 
                     id="message" 
+                    name="message"
                     placeholder="Your message..." 
                     rows={4}
+                    required
                     className="bg-background/50 border-primary/20 focus:border-primary"
                   />
                 </div>
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-primary to-tech-blue text-primary-foreground hover:opacity-90"
+                  disabled={isLoading}
+                  className="w-full bg-gradient-to-r from-primary to-tech-blue text-primary-foreground hover:opacity-90 disabled:opacity-50"
                 >
                   <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                  {isLoading ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </CardContent>
